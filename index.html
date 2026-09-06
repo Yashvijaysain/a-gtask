@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#193b32">
+  <title>A&G | Two quick ways to support us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ivory:#f7f5ef; --paper:#fffdf8; --ink:#1e2824; --muted:#66706b; --forest:#193b32; --forest-light:#2e6857; --gold:#bd8f4a; --line:#e3e1d9; --success:#32846a; --red:#d94f43; --shadow:0 18px 50px rgba(31,45,39,.08); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--ivory); color:var(--ink); font-family:'DM Sans',sans-serif; line-height:1.5; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.27; background-image:radial-gradient(#c7bfae .6px, transparent .6px); background-size:18px 18px; mask-image:linear-gradient(to bottom, #000, transparent 65%); }
+    button, a, textarea { font:inherit; }
+    button, a { -webkit-tap-highlight-color:transparent; }
+    a { color:inherit; }
+    .shell { width:min(1120px, calc(100% - 32px)); margin:auto; position:relative; }
+    .topbar { padding:22px 0 8px; display:flex; justify-content:space-between; align-items:center; }
+    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-size:12px; letter-spacing:.15em; font-weight:700; }
+    .brand-mark { width:36px; height:36px; display:grid; place-items:center; color:#fff; background:var(--forest); border-radius:50%; font-family:'Playfair Display',serif; letter-spacing:-.05em; font-size:15px; }
+    .location { color:var(--muted); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+    .hero { padding:62px 0 36px; max-width:720px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--gold); font-size:11px; font-weight:700; letter-spacing:.19em; text-transform:uppercase; }
+    .eyebrow:before { content:""; width:32px; height:1px; background:var(--gold); }
+    h1, h2, h3 { font-family:'Playfair Display',serif; font-weight:600; line-height:1.08; margin:0; }
+    h1 { margin:18px 0 16px; font-size:clamp(42px, 7vw, 74px); letter-spacing:-.035em; }
+    .hero-copy { max-width:590px; color:var(--muted); font-size:16px; }
+    .progress-wrap { position:sticky; top:0; z-index:10; padding:12px 0; background:rgba(247,245,239,.9); backdrop-filter:blur(14px); border-bottom:1px solid rgba(227,225,217,.75); }
+    .progress-inner { display:flex; align-items:center; gap:18px; }
+    .progress-stat { min-width:98px; }
+    .progress-percent { display:block; font-family:'Playfair Display',serif; font-size:25px; color:var(--forest); line-height:1; }
+    .progress-label { display:block; margin-top:4px; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.09em; }
+    .progress-track { flex:1; height:5px; overflow:hidden; border-radius:9px; background:#deded5; }
+    .progress-fill { height:100%; width:0; background:var(--forest); border-radius:9px; transition:width .7s cubic-bezier(.2,.8,.2,1); }
+    .progress-steps { display:flex; gap:14px; color:var(--muted); font-size:11px; white-space:nowrap; }
+    .step { display:flex; align-items:center; gap:5px; }
+    .step i { width:18px; height:18px; display:grid; place-items:center; border:1px solid #bfc3bb; border-radius:50%; font-style:normal; font-size:10px; }
+    .step.complete { color:var(--success); font-weight:700; }
+    .step.complete i { border-color:var(--success); background:var(--success); color:white; }
+    .step + .step:before { content:""; display:block; width:17px; height:1px; margin-right:3px; background:#d0d2c9; }
+    .tasks { padding:36px 0 90px; display:grid; gap:24px; }
+    .task-card { position:relative; padding:26px; background:rgba(255,253,248,.86); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); transition:opacity .5s, transform .5s, border-color .5s; }
+    .task-card.completed { border-color:#b7d2c6; background:linear-gradient(140deg, #fffdf8, #f3faf5); }
+    .task-card.locked { opacity:.57; }
+    .task-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:30px; }
+    .task-number { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:.14em; }
+    .task-status { display:flex; align-items:center; gap:7px; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+    .status-dot { width:23px; height:23px; display:grid; place-items:center; border:1px solid #ced1ca; border-radius:50%; font-size:11px; }
+    .completed .status-dot { background:var(--success); border-color:var(--success); color:white; }
+    .completed .task-status { color:var(--success); }
+    .task-icon { width:45px; height:45px; display:grid; place-items:center; margin-bottom:18px; background:#f1eade; border-radius:12px; font-size:22px; }
+    .task-card h2 { font-size:clamp(28px, 4vw, 40px); }
+    .task-description { max-width:560px; color:var(--muted); font-size:14px; }
+    .task-body { margin-top:25px; }
+    .assist { padding:20px; background:#f6f2e9; border:1px solid #ebe4d5; border-radius:12px; }
+    .assist-heading { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:14px; font-size:13px; font-weight:700; }
+    .assist-heading button { padding:0; border:0; background:none; color:var(--forest-light); cursor:pointer; font-size:12px; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+    .review-tools { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:10px; }
+    .review-tools label { color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .review-tools select { min-height:36px; padding:7px 30px 7px 10px; color:var(--forest); background:var(--paper); border:1px solid #d8d5ca; border-radius:7px; outline:none; font-size:12px; }
+    .review-meta { display:flex; justify-content:space-between; margin:10px 0 0; color:var(--muted); font-size:11px; }
+    .review-meta strong { color:var(--forest); }
+    textarea { display:block; width:100%; min-height:128px; resize:vertical; padding:14px; color:var(--ink); background:var(--paper); border:1px solid #ddd9ce; border-radius:8px; outline:none; font-size:14px; line-height:1.55; transition:border-color .2s, box-shadow .2s; }
+    .review-changing { animation:reviewChange .35s ease both; }
+    textarea:focus { border-color:var(--forest-light); box-shadow:0 0 0 3px rgba(46,104,87,.1); }
+    .assist-note { margin:10px 0 0; color:var(--muted); font-size:11px; font-style:italic; }
+    .button-stack { display:grid; gap:11px; margin-top:17px; }
+    .btn { min-height:50px; display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 20px; border:1px solid transparent; border-radius:8px; cursor:pointer; text-align:center; font-weight:700; font-size:13px; transition:transform .2s, background .2s, box-shadow .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn:active { transform:translateY(0); }
+    .btn-primary { color:#fff; background:var(--forest); box-shadow:0 8px 18px rgba(25,59,50,.16); }
+    .btn-primary:hover { background:#245344; box-shadow:0 11px 23px rgba(25,59,50,.22); }
+    .btn-outline { color:var(--forest); background:transparent; border-color:#bfc9c0; }
+    .btn-outline:hover { background:#f1f6f1; }
+    .btn-google { color:#fff; background:var(--forest); }
+    .btn-youtube { color:white; background:var(--red); box-shadow:0 8px 18px rgba(217,79,67,.16); }
+    .btn-youtube:hover { background:#c94237; }
+    .complete-button { color:var(--success); background:#edf7f1; border-color:#c2decf; }
+    .locked-message { display:flex; align-items:center; gap:10px; padding:15px; color:var(--muted); background:#f4f3ee; border-radius:9px; font-size:12px; }
+    .task-card.completed .task-body { animation:softIn .55s ease both; }
+    .hidden { display:none !important; }
+    .success { display:none; padding:65px 24px 75px; text-align:center; }
+    .success.show { display:block; animation:softIn .7s ease both; }
+    .success-icon { width:72px; height:72px; display:grid; place-items:center; margin:0 auto 22px; color:white; background:var(--success); border-radius:50%; font-size:35px; animation:pop .65s cubic-bezier(.2,1.5,.5,1) both; }
+    .success h2 { font-size:clamp(38px, 7vw, 60px); }
+    .success p { max-width:480px; margin:14px auto 23px; color:var(--muted); }
+    .success-list { display:flex; justify-content:center; flex-wrap:wrap; gap:12px 22px; margin:0 0 28px; color:var(--success); font-size:12px; font-weight:700; }
+    footer { padding:28px 0 36px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; }
+    footer strong { color:var(--ink); font-size:12px; }
+    .toast { position:fixed; left:50%; bottom:22px; z-index:30; padding:12px 17px; color:#fff; background:var(--ink); border-radius:7px; box-shadow:0 12px 30px rgba(0,0,0,.18); font-size:12px; transform:translate(-50%, 20px); opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; }
+    .toast.show { opacity:1; transform:translate(-50%, 0); }
+    .confetti { position:fixed; inset:0; z-index:25; pointer-events:none; overflow:hidden; }
+    .confetti i { position:absolute; top:-12px; width:7px; height:15px; animation:fall 2.1s ease-in forwards; }
+    @keyframes softIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+    @keyframes reviewChange { from { opacity:.25; transform:translateY(5px); } to { opacity:1; transform:none; } }
+    @keyframes pop { from { transform:scale(.3); opacity:0; } to { transform:scale(1); opacity:1; } }
+    @keyframes fall { to { transform:translate3d(var(--x), 105vh, 0) rotate(540deg); opacity:0; } }
+    @media (min-width:700px) { .shell { width:min(1120px, calc(100% - 80px)); } .task-card { padding:34px; } .button-stack { display:flex; flex-wrap:wrap; } .button-stack .btn { flex:1; } }
+    @media (max-width:540px) { .location { display:none; } .hero { padding-top:48px; } .progress-inner { gap:10px; } .progress-steps { gap:5px; font-size:10px; } .step + .step:before { width:8px; margin-right:0; } .task-card { padding:21px; } .assist-heading { align-items:flex-start; flex-direction:column; gap:7px; } .footer-row { flex-direction:column; gap:8px; } }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="Agarwal and Gehlot Realtors home"><span class="brand-mark">A&amp;G</span><span>AGARWAL &amp; GEHLOT<br>REALTORS</span></a>
+    <span class="location">Noida &amp; Delhi NCR</span>
+  </header>
+
+  <main id="top">
+    <section class="shell hero">
+      <span class="eyebrow">A little support goes a long way</span>
+      <h1>Two quick ways<br>to support A&amp;G.</h1>
+      <p class="hero-copy">Share your genuine experience and stay connected with our property insights. It takes less than two minutes.</p>
+    </section>
+
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="shell progress-inner" aria-live="polite">
+        <div class="progress-stat"><span class="progress-percent" id="progressPercent">0%</span><span class="progress-label" id="progressLabel">0 of 2 completed</span></div>
+        <div class="progress-track" aria-label="Task progress"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-steps"><span class="step" id="step1"><i>1</i> Review</span><span class="step" id="step2"><i>2</i> YouTube</span></div>
+      </div>
+    </div>
+
+    <section class="shell tasks" id="tasks">
+      <article class="task-card" id="task1Card">
+        <div class="task-top"><span class="task-number">01 / 02</span><span class="task-status"><span class="status-dot">1</span><span class="status-text">Your voice matters</span></span></div>
+        <div class="task-icon">★</div>
+        <h2>Share your<br>Google review</h2>
+        <p class="task-description">Tell others about your genuine experience with Agarwal &amp; Gehlot Realtors.</p>
+        <div class="task-body">
+          <div class="assist">
+            <div class="assist-heading"><span>Review Writing Suggestion</span><button id="suggestButton" type="button">✨ Generate New Review</button></div>
+            <div class="review-tools"><label for="reviewStyle">Choose Review Style</label><select id="reviewStyle"><option value="random">Random</option><option value="short">Short</option><option value="professional">Professional</option><option value="friendly">Friendly</option><option value="detailed">Detailed</option><option value="property-guidance">Property Guidance</option><option value="customer-service">Customer Service</option><option value="site-visit">Site Visit</option><option value="noida-real-estate">Noida Real Estate</option></select></div>
+            <textarea id="reviewText" aria-label="Editable review suggestion"></textarea>
+            <div class="review-meta"><span id="reviewCounter">Review #1 of 1,000</span><strong>Editable</strong></div>
+            <p class="assist-note">Please edit this suggestion so it accurately reflects your own experience with A&amp;G before posting.</p>
+            <div class="button-stack"><button class="btn btn-primary" id="copyButton" type="button">📋 Copy Review</button><button class="btn btn-outline" id="anotherButton" type="button">✨ Generate Another</button></div>
+          </div>
+          <div class="button-stack"><a class="btn btn-google" id="googleLink" href="https://g.page/r/CcxKtAUlMnhSEAE/review" target="_blank" rel="noopener">★ Post Google review</a><button class="btn complete-button hidden" id="complete1Button" type="button">✓ I’ve posted my review</button></div>
+        </div>
+      </article>
+
+      <article class="task-card locked" id="task2Card" aria-disabled="true">
+        <div class="task-top"><span class="task-number">02 / 02</span><span class="task-status"><span class="status-dot">2</span><span class="status-text">Locked</span></span></div>
+        <div class="task-icon">▶</div>
+        <h2>Subscribe to A&amp;G<br>on YouTube</h2>
+        <p class="task-description">Stay updated with property insights, market updates, project walkthroughs and real-estate education from A&amp;G.</p>
+        <div class="task-body">
+          <div class="locked-message" id="lockedMessage">🔒 Complete Task 1 to unlock</div>
+          <div class="button-stack hidden" id="youtubeActions"><a class="btn btn-youtube" href="https://www.youtube.com/@AgarwalGehlotrealty" target="_blank" rel="noopener">▶ Subscribe on YouTube</a><button class="btn complete-button" id="complete2Button" type="button">✓ I’ve subscribed</button></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="shell success" id="successSection" aria-live="polite">
+      <div class="success-icon">✓</div><h2>Thank you!</h2><p>You’ve completed both tasks. Thank you for supporting Agarwal &amp; Gehlot Realtors.</p><div class="success-list"><span>✓ Google Review</span><span>✓ YouTube Subscription</span></div><a class="btn btn-primary" href="https://www.youtube.com/@AgarwalGehlotrealty" target="_blank" rel="noopener">Visit A&amp;G YouTube</a>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-row"><strong>Agarwal &amp; Gehlot Realtors</strong><span>Real Estate Advisory • Noida &amp; Delhi NCR</span><span>Thank you for supporting A&amp;G.</span></div></footer>
+  <div class="toast" id="toast" role="status"></div><div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script>
+    const STORAGE_KEY = 'ag-realtors-tasks';
+    const reviewBlueprints = [
+      { category:'professional', openers:['The A&G team was professional and easy to communicate with.','I had a professional interaction with Agarwal & Gehlot.','A&G handled my enquiry in a calm and organised way.','The team made a good first impression through their professional approach.','My conversation with the A&G team was courteous and well managed.'], details:['They explained the discussion clearly and gave me time to ask questions.','The information was presented in a straightforward and respectful manner.','I appreciated the clear updates and the patience shown during our conversation.','Their responses were thoughtful, relevant and easy to follow.','The team kept the conversation practical without making it feel rushed.'], closers:['Overall, it was a positive experience.','I appreciated that approach.'] },
+      { category:'helpful-staff', openers:['The staff at A&G were helpful from the beginning.','I found the Agarwal & Gehlot team approachable and supportive.','The people I spoke with were patient and helpful.','A&G has a helpful team that listens carefully.','The team was friendly when I reached out for information.'], details:['They took time to understand my questions before responding.','Their guidance made the initial discussion easier to understand.','They shared useful information without overwhelming me with details.','I was able to ask follow-up questions and receive clear answers.','The staff helped me organise my thoughts around the available options.'], closers:['The interaction felt comfortable and respectful.','That support made a difference.'] },
+      { category:'property-consultation', openers:['The property consultation with A&G was useful.','I had a clear and comfortable property discussion with the team.','A&G provided a helpful starting point for my property enquiry.','The consultation gave me a better way to think about my requirements.','I appreciated the time given to my property-related questions.'], details:['The team explained the options in language that was easy to follow.','They discussed relevant details and encouraged me to ask questions.','The conversation was informative without feeling complicated.','I received practical context before considering the available choices.','Their explanation helped me understand what information to compare.'], closers:['It was a smooth consultation experience.','I found the guidance useful.'] },
+      { category:'real-estate-guidance', openers:['A&G offered useful real-estate guidance.','The guidance from Agarwal & Gehlot was clear and practical.','I found the real-estate discussion with the team informative.','The team helped me make sense of the property conversation.','My enquiry was met with useful and balanced guidance.'], details:['They explained the relevant considerations in a simple way.','The discussion helped me understand the questions I should ask next.','I appreciated the practical information shared during the conversation.','They gave context around the options instead of rushing through them.','The team made the subject easier to understand for someone still exploring.'], closers:['The approach felt professional and helpful.','It was a useful conversation.'] },
+      { category:'noida-real-estate', openers:['The team shared useful information about Noida real estate.','I found A&G’s Noida property discussion informative.','Agarwal & Gehlot helped me understand the Noida market conversation better.','The Noida-related guidance was presented clearly.','My questions about property options in Noida were handled well.'], details:['They explained the local context in a way that was easy to follow.','The team discussed different considerations without making broad promises.','I received helpful information to use while comparing possibilities.','Their local perspective added useful context to the initial enquiry.','The discussion gave me a clearer starting point for further research.'], closers:['I appreciated the straightforward approach.','The information was useful.'] },
+      { category:'ncr-real-estate', openers:['A&G provided helpful context about the Delhi NCR property market.','I had a useful conversation about real estate across NCR.','The team explained the NCR property discussion in a clear way.','My questions about Delhi NCR options received thoughtful responses.','Agarwal & Gehlot shared relevant information about the NCR market.'], details:['They encouraged comparison and explained which details were worth checking.','The conversation was measured, practical and easy to follow.','I appreciated the regional context they added to the discussion.','The information helped me understand the differences between areas.','They answered questions patiently and kept the conversation grounded.'], closers:['It was a positive interaction.','I found the explanation helpful.'] },
+      { category:'good-communication', openers:['The communication from A&G was clear and consistent.','I appreciated the way the team communicated.','Agarwal & Gehlot kept the conversation easy to follow.','The team explained each point without using unnecessary jargon.','Communication was one of the strongest parts of my interaction with A&G.'], details:['My questions received direct and understandable answers.','The team checked that the information was clear before moving forward.','Updates were shared in a polite and organised manner.','I felt comfortable asking for clarification when I needed it.','The discussion stayed focused on the information I was looking for.'], closers:['That made the experience feel straightforward.','It was handled well.'] },
+      { category:'quick-response', openers:['The A&G team responded promptly to my enquiry.','I received a timely response from Agarwal & Gehlot.','The team was available when I needed clarification.','A&G handled my follow-up questions without unnecessary delay.','The response to my initial message was courteous and quick.'], details:['The reply addressed my questions instead of sending a generic answer.','I appreciated the clear information shared in response.','The team kept me updated as the discussion progressed.','Their availability made it easier to continue the conversation.','The quick communication helped me understand the next points to consider.'], closers:['It was a helpful experience.','I valued the responsiveness.'] },
+      { category:'site-visit', openers:['The site visit support from A&G was well coordinated.','A&G made the site visit discussion easy to follow.','I appreciated the team’s support around the site visit information.','The team was helpful while discussing the site visit arrangements.','The site visit conversation was handled in an organised manner.'], details:['They explained what information was available and answered my questions patiently.','The team was attentive and allowed enough time for discussion.','I received clear directions about what to look at and clarify.','The support felt courteous and practical throughout the interaction.','They helped me understand the points that were relevant to my enquiry.'], closers:['Overall, the experience was comfortable.','The support was useful.'] },
+      { category:'project-explanation', openers:['A&G explained the project information clearly.','The project discussion with the team was informative.','I found the explanation of the project details easy to understand.','The team gave a clear overview of the project conversation.','Agarwal & Gehlot took time to explain the available project information.'], details:['They answered questions patiently and separated key points from general details.','The conversation helped me understand what information to compare.','I appreciated the simple explanation and opportunity to ask follow-ups.','The team presented the details in a calm and professional way.','The discussion was useful while I was still learning about the options.'], closers:['It was a good consultation.','The explanation was helpful.'] },
+      { category:'customer-service', openers:['The customer service from A&G was courteous.','I had a pleasant customer service interaction with the team.','A&G handled my questions with good customer service.','The team was respectful and attentive during my enquiry.','My interaction with Agarwal & Gehlot felt service focused and professional.'], details:['They listened to what I was asking and responded thoughtfully.','The team made space for clarification and kept the tone friendly.','I appreciated the organised communication and helpful follow-through.','The conversation was handled with patience and courtesy.','The service felt straightforward rather than pressured.'], closers:['I would describe the experience as positive.','That was appreciated.'] },
+      { category:'market-knowledge', openers:['The A&G team shared useful market information.','I found the market discussion with Agarwal & Gehlot informative.','The team showed a practical understanding of the property market.','A&G provided helpful context while discussing the market.','My market-related questions were answered in a clear way.'], details:['They explained that different factors need to be considered before making a decision.','The information gave me useful context for my own research.','I appreciated the balanced tone and the clear explanations.','The team connected the general discussion to the questions I had.','Their responses helped me identify what details to compare further.'], closers:['It was a worthwhile conversation.','The information was practical.'] },
+      { category:'investment-guidance', openers:['The A&G team gave a thoughtful property investment discussion.','I found the investment-related information from A&G useful.','Agarwal & Gehlot explained property considerations in a balanced way.','The team helped me understand questions to consider around property investment.','My investment guidance conversation with A&G was clear and measured.'], details:['They avoided making the discussion complicated and encouraged careful comparison.','The team explained that personal research and circumstances matter.','I appreciated the focus on information rather than exaggerated promises.','The conversation covered useful points for a person still exploring options.','Their guidance helped me organise the factors I wanted to review.'], closers:['The approach felt responsible and professional.','I found it helpful.'] },
+      { category:'property-comparison', openers:['A&G helped me compare property options more clearly.','The property comparison discussion was useful and well explained.','I appreciated the way the team approached comparing different options.','Agarwal & Gehlot gave me a practical framework for comparing projects.','The team made the comparison conversation easier to understand.'], details:['They pointed out details that were worth checking rather than telling me what to choose.','The explanation helped me separate the different features under discussion.','I was able to ask questions about the differences between options.','The team presented the information in an organised and patient way.','The conversation gave me a clearer basis for further research.'], closers:['It was a helpful consultation.','I appreciated the clarity.'] },
+      { category:'transparent-communication', openers:['The discussion with A&G felt transparent and respectful.','I appreciated the transparent communication from the team.','Agarwal & Gehlot explained the conversation in an open way.','The team was clear about the information they were sharing.','My interaction with A&G was straightforward and transparent.'], details:['They answered questions directly and did not make the discussion feel rushed.','I was given room to think about the information and ask follow-ups.','The team separated available details from matters that needed checking.','The conversation was clear without relying on exaggerated claims.','I appreciated having a calm discussion about the available options.'], closers:['That made the experience feel trustworthy.','It was handled professionally.'] },
+      { category:'helpful-information', openers:['A&G shared information that was genuinely useful for my questions.','The information from the team was clear and relevant.','I found the property information provided by A&G helpful.','Agarwal & Gehlot gave me useful details to think through.','The team shared practical information during my enquiry.'], details:['The explanations were easy to follow and left room for clarification.','I appreciated receiving context rather than only a quick summary.','The information helped me understand which points to research next.','The team focused on details that were relevant to the conversation.','The discussion was informative without being overloaded with jargon.'], closers:['It was a positive interaction.','I found the information valuable.'] },
+      { category:'professional-behaviour', openers:['The team’s behaviour was professional throughout my interaction.','A&G maintained a courteous and professional tone.','I appreciated the respectful way the team handled the discussion.','The team was composed, attentive and professional.','Agarwal & Gehlot treated my questions with patience and respect.'], details:['They listened before responding and kept the information relevant.','The conversation was organised and easy to navigate.','I felt comfortable asking for clarification when needed.','The team communicated in a clear and considerate manner.','Their approach made the interaction feel calm and productive.'], closers:['Overall, I had a good experience.','That professionalism stood out.'] },
+      { category:'friendly', openers:['The A&G team was friendly and approachable.','I had a warm and easy interaction with Agarwal & Gehlot.','The team made the conversation feel comfortable from the start.','A&G’s friendly approach made it easy to ask questions.','I appreciated the welcoming tone of the team.'], details:['They explained the information patiently and kept the discussion simple.','The conversation was helpful without feeling formal or difficult.','I felt listened to while discussing my property-related questions.','The team shared useful context in an easygoing way.','Their approachable manner made the initial consultation more comfortable.'], closers:['It was a pleasant experience.','I appreciated the interaction.'] },
+      { category:'smooth-consultation', openers:['The consultation with A&G was smooth and informative.','I had an easy consultation experience with the team.','Agarwal & Gehlot kept the property discussion organised.','The consultation moved at a comfortable pace.','My conversation with A&G was simple to follow from start to finish.'], details:['The team responded to my questions and explained the relevant points.','I appreciated the balance between useful detail and a clear conversation.','The discussion helped me understand what to consider next.','The process felt calm, respectful and well coordinated.','I was able to ask questions without feeling hurried.'], closers:['Overall, it was a good interaction.','The experience was helpful.'] },
+      { category:'project-knowledge', openers:['The A&G team shared useful project knowledge.','I found the team well informed about the project discussion.','Agarwal & Gehlot explained project-related points clearly.','The project information was handled with confidence and care.','The team gave a helpful overview of the project details.'], details:['They clarified my questions and pointed out information worth reviewing.','The explanations were practical and easy to understand.','I appreciated the opportunity to ask about different aspects of the discussion.','The team kept the information relevant to my enquiry.','The conversation helped me know what to compare in my own time.'], closers:['It was a useful discussion.','I found the team helpful.'] }
+    ];
+    const reviews = reviewBlueprints.flatMap((blueprint) => Array.from({ length:50 }, (_, variant) => {
+      const length = variant < 5 ? 'very-short' : variant < 17 ? 'short' : variant < 37 ? 'medium' : 'detailed';
+      const opener = blueprint.openers[variant % 5]; const detail = blueprint.details[Math.floor(variant / 5) % 5]; const closer = blueprint.closers[Math.floor(variant / 25)];
+      const text = length === 'very-short' ? `${opener.replace(/\.$/, '')}.` : length === 'short' ? `${opener} ${detail}` : `${opener} ${detail} ${closer}`;
+      return { id: reviewBlueprints.indexOf(blueprint) * 50 + variant + 1, category: blueprint.category, length, text };
+    }));
+    let state = { task1: false, task2: false };
+    let currentReviewId = null;
+    const recentReviewIds = [];
+    const $ = (id) => document.getElementById(id);
+
+    function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    function loadState() { try { const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); if (saved) state = { ...state, ...saved }; } catch (error) { localStorage.removeItem(STORAGE_KEY); } }
+    function generateRandomReview() {
+      const selectedStyle = $('reviewStyle').value;
+      const categoryAliases = { 'property-guidance':['property-consultation','real-estate-guidance','project-explanation','property-comparison','helpful-information','project-knowledge','investment-guidance'], 'customer-service':['customer-service','helpful-staff','quick-response','good-communication','transparent-communication'], 'site-visit':['site-visit'], 'noida-real-estate':['noida-real-estate','ncr-real-estate','market-knowledge'] };
+      let pool = reviews.filter((review) => selectedStyle === 'random' || review.length === selectedStyle || review.category === selectedStyle || (categoryAliases[selectedStyle] || []).includes(review.category));
+      const eligible = pool.filter((review) => !recentReviewIds.includes(review.id));
+      if (eligible.length) pool = eligible;
+      const review = pool[Math.floor(Math.random() * pool.length)];
+      currentReviewId = review.id; recentReviewIds.push(review.id); if (recentReviewIds.length > 20) recentReviewIds.shift();
+      const textArea = $('reviewText'); textArea.classList.remove('review-changing'); void textArea.offsetWidth; textArea.value = review.text; textArea.classList.add('review-changing');
+      $('reviewCounter').textContent = `Review #${review.id} of 1,000`;
+    }
+    function showToast(message) { const toast = $('toast'); toast.textContent = message; toast.classList.add('show'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 2600); }
+    function updateProgress() {
+      const completed = Number(state.task1) + Number(state.task2); const percent = completed * 50;
+      $('progressPercent').textContent = `${percent}%`; $('progressLabel').textContent = `${completed} of 2 completed`; $('progressFill').style.width = `${percent}%`;
+      [$('step1'), $('step2')].forEach((step, index) => { const done = index === 0 ? state.task1 : state.task2; step.classList.toggle('complete', done); step.querySelector('i').textContent = done ? '✓' : String(index + 1); });
+    }
+    function render() {
+      const card1 = $('task1Card'); const card2 = $('task2Card');
+      card1.classList.toggle('completed', state.task1); $('complete1Button').classList.toggle('hidden', state.task1); $('googleLink').classList.toggle('hidden', state.task1); $('copyButton').disabled = state.task1; $('anotherButton').disabled = state.task1;
+      if (state.task1) { $('complete1Button').textContent = '✓ Task 1 completed'; $('complete1Button').classList.remove('hidden'); card1.querySelector('.status-dot').textContent = '✓'; card1.querySelector('.status-text').textContent = 'Completed'; }
+      card2.classList.toggle('locked', !state.task1 && !state.task2); card2.setAttribute('aria-disabled', String(!state.task1 && !state.task2)); $('lockedMessage').classList.toggle('hidden', state.task1 || state.task2); $('youtubeActions').classList.toggle('hidden', !state.task1 || state.task2); card2.classList.toggle('completed', state.task2);
+      if (state.task2) { card2.querySelector('.status-dot').textContent = '✓'; card2.querySelector('.status-text').textContent = 'Completed'; $('successSection').classList.add('show'); $('progress-wrap').classList.add('hidden'); $('tasks').classList.add('hidden'); }
+      updateProgress();
+    }
+    function completeTask1() { if (state.task1) return; state.task1 = true; saveState(); render(); showToast('Task 1 complete. YouTube is now unlocked.'); window.setTimeout(() => $('task2Card').scrollIntoView({ behavior:'smooth', block:'center' }), 180); }
+    function completeTask2() { if (state.task2 || !state.task1) return; state.task2 = true; saveState(); render(); launchConfetti(); $('successSection').scrollIntoView({ behavior:'smooth', block:'center' }); }
+    function resetProgress() { localStorage.removeItem(STORAGE_KEY); window.location.href = window.location.pathname; }
+    function launchConfetti() { const colors = ['#193b32', '#bd8f4a', '#32846a', '#d94f43', '#e7c98e']; const layer = $('confetti'); layer.innerHTML = ''; for (let index = 0; index < 46; index += 1) { const piece = document.createElement('i'); piece.style.left = `${Math.random() * 100}%`; piece.style.background = colors[index % colors.length]; piece.style.setProperty('--x', `${(Math.random() - .5) * 180}px`); piece.style.animationDelay = `${Math.random() * .45}s`; layer.appendChild(piece); } window.setTimeout(() => { layer.innerHTML = ''; }, 2500); }
+    $('suggestButton').addEventListener('click', generateRandomReview); $('anotherButton').addEventListener('click', generateRandomReview); $('reviewStyle').addEventListener('change', generateRandomReview);
+    $('copyButton').addEventListener('click', async () => { const text = $('reviewText').value.trim(); if (!text) return showToast('Write a review before copying'); try { await navigator.clipboard.writeText(text); $('copyButton').textContent = '✓ Copied'; showToast('Review copied successfully'); window.setTimeout(() => { $('copyButton').textContent = 'Copy review'; }, 2200); } catch (error) { $('reviewText').select(); document.execCommand('copy'); showToast('Review copied successfully'); } });
+    $('googleLink').addEventListener('click', () => { window.setTimeout(() => { if (!state.task1) $('complete1Button').classList.remove('hidden'); }, 450); }); $('complete1Button').addEventListener('click', completeTask1); $('complete2Button').addEventListener('click', completeTask2);
+    if (new URLSearchParams(window.location.search).get('reset') === 'true') resetProgress(); loadState(); generateRandomReview(); render();
+  </script>
+</body>
+</html>
